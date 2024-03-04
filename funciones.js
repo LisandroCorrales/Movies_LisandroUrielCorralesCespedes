@@ -1,7 +1,7 @@
 export function crearPelicula(movie){
     return `
     <article class="flex flex-col gap-3 w-10/12 md:w-5/12 xl:w-3/12 rounded-lg border border-[#701a75] bg-[#D2CCFF]">
-        <img class="w-full rounded-t-lg" src="${movie.image}" alt="" >
+        <img class="w-full rounded-t-lg" src=" https://moviestack.onrender.com/static/${movie.image}" alt="" >
         <h2 class="font-bold text-2xl font-serif text-center">${movie.title}</h2>
         <h3 class="italic font-medium px-3">${movie.tagline}</h3>
         <p class="px-3 pb-4 ">${movie.overview}</p>
@@ -53,7 +53,7 @@ export function verifiqueChecked() {
 export const fnReduce = (template, genero) => template + crearLista(genero)
 
 export function obtenerGenres(movies){
-    const generos = movies.map( movie => movie.genres).flat()  //tags
+    const generos = movies.map( movie => movie.genres).flat()  
     const setGenres = new Set(generos);
     const generosSinRepetidos = (Array.from(setGenres)).sort();
     generosSinRepetidos.unshift('All');
